@@ -18,7 +18,6 @@ class CategoryCollectonViewCell: UITableViewCell, UICollectionViewDataSource, UI
     
     var infoCollectionView: UICollectionView!
     var collectionViewData: [ABRoad] = []
-    let defaultImage: UIImage = UIImage(named: "test.png")!
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -29,6 +28,7 @@ class CategoryCollectonViewCell: UITableViewCell, UICollectionViewDataSource, UI
         layout.scrollDirection = UICollectionViewScrollDirection.horizontal
         
         infoCollectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        infoCollectionView.showsHorizontalScrollIndicator = false
         print(infoCollectionView)
         
         infoCollectionView.delegate = self
@@ -66,7 +66,8 @@ extension CategoryCollectonViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCell", for: indexPath) as! InfoViewCell
         
-        cell.hotelImage.image = defaultImage
+//        cell.backgroundColor = UIColor.white
+        cell.hotelImage.image = nil
 //        cell.hotelImage.image = collectionViewData[indexPath.row].image
         cell.hotelImage.clipsToBounds = true
         cell.hotelImage.layer.cornerRadius = 5

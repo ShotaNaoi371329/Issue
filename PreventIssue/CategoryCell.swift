@@ -19,7 +19,7 @@ class CategoryCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-//        countryLabel.text = "testCountry"
+        countryLabel.text = "testCountry"
         countryLabel.font = UIFont.systemFont(ofSize: countryLabel.font.pointSize+5, weight: UIFontWeightLight)
         
         allLookLabel.setTitle("すべて見る >", for: .normal)
@@ -35,8 +35,8 @@ class CategoryCell: UITableViewCell {
             countryLabel <- [
                 Top(30),
                 Left(20),
-                Right(0).to(allLookLabel, .left),
-                Bottom(20)
+//                Right(0).to(allLookLabel, .left),
+                Bottom(20),
             ]
             
             allLookLabel <- [

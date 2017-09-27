@@ -40,6 +40,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         findTableView.register(CategoryCell.self, forCellReuseIdentifier: NSStringFromClass(CategoryCell.self))
         findTableView.register(CategoryCollectonViewCell.self, forCellReuseIdentifier: NSStringFromClass(CategoryCollectonViewCell.self))
         findTableView.separatorStyle = .none
+        findTableView.showsVerticalScrollIndicator = false
         
         self.view.addSubview(findTableView)
         
@@ -105,15 +106,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 //        var cell: UITableViewCell!
         if indexPath.row%2 == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(CategoryCell.self), for: indexPath) as! CategoryCell
+            print(countryName[data[(indexPath.row/2)][0].country])
             cell.countryLabel.text = countryName[data[(indexPath.row/2)][0].country]
+            print(cell.countryLabel.text)
+            cell.countryLabel.textColor = UIColor.black
             cell.selectionStyle = UITableViewCellSelectionStyle.none
             
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(CategoryCollectonViewCell.self), for: indexPath) as! CategoryCollectonViewCell
             cell.infoCollectionView.contentOffset = CGPoint(x: 0, y: 0)
-            print((indexPath.row-1) / 2)
-            print(data[(indexPath.row-1)/2])
+//            print((indexPath.row-1) / 2)
+//            print(data[(indexPath.row-1)/2])
             cell.collectionViewData = data[(indexPath.row-1)/2]
             cell.selectionStyle = UITableViewCellSelectionStyle.none
             cell.infoCollectionView.reloadData()

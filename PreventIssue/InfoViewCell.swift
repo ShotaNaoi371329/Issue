@@ -24,7 +24,7 @@ class InfoViewCell: UICollectionViewCell {
         
         self.backgroundColor = UIColor.white
         
-        hotelImage.image = UIImage(named: "test.png")
+        hotelImage.image = UIImage()
         //hotelImage.contentMode = .scaleAspectFit
         hotelImage.backgroundColor = UIColor.black
         

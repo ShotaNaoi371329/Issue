@@ -111,7 +111,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(CategoryCollectonViewCell.self), for: indexPath) as! CategoryCollectonViewCell
-            
+            cell.infoCollectionView.contentOffset = CGPoint(x: 0, y: 0)
             print((indexPath.row-1) / 2)
             print(data[(indexPath.row-1)/2])
             cell.collectionViewData = data[(indexPath.row-1)/2]

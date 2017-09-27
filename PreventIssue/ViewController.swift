@@ -74,27 +74,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 //                    for i in 0..<ii {
 //                        let jj:Int = (self?.data[i].count)!
 //                        for j in 0..<jj {
-//                            self?.getImage(imageURL: (self?.data[i][j].img)!, handlar: { image in
+//                            abRoadApi.getImage(imageURL: (self?.data[i][j].img)!, handlar: { image in
 //
 //                                self?.data[i][j].image = image
 //                                count2 += 1
-//                                if count2 == 25 {
+//                                if count2 == 25 { //5カテゴリ * 5要素
 //                                    self?.findTableView.reloadData()
 //                                }
 //                            })
 //                        }
 //                    }
-//    func getImage(imageURL: String, handlar:@escaping (UIImage) -> ()) {
-//
-//        Alamofire.request(imageURL).responseImage(completionHandler: { response in
-//
-//            guard let image = response.result.value else {
-//                return
-//            }
-//
-//            handlar(image)
-//        })
-//    }
                     print(self?.data)
                     self?.findTableView.reloadData()
                 }

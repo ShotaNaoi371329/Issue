@@ -51,15 +51,15 @@ class ABRoadApi {
         
     }
     
-    func getImage(imageURL: String, handlar: @escaping (UIImage) -> ()) {
-        
-        Alamofire.request(imageURL).responseImage { response in
-            
-            guard let image = response.result.value else {
-                return
-            }
-            
-            handlar(image)
-        }
-    }
+//    func getImage(imageURL: String, handlar: @escaping (UIImage) -> ()) {
+//        
+//        Alamofire.request(imageURL).responseImage { response in
+//            
+//            guard let image = response.result.value else {
+//                return
+//            }
+//            
+//            handlar(image)
+//        }
+//    }
 }

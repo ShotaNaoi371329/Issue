@@ -25,7 +25,6 @@ class InfoViewCell: UICollectionViewCell {
         self.backgroundColor = UIColor.white
         
         hotelImage.image = UIImage()
-        //hotelImage.contentMode = .scaleAspectFit
         hotelImage.backgroundColor = UIColor.black
         
         let heartImage: UIImageView = UIImageView(image: UIImage(named: "heart_white.png"))
@@ -40,9 +39,7 @@ class InfoViewCell: UICollectionViewCell {
         priceLabel.textColor = UIColor.black
         priceLabel.font = UIFont(name: "Heiti SC", size: priceLabel.font.pointSize)
         priceLabel.font = UIFont.systemFont(ofSize: priceLabel.font.pointSize, weight: UIFontWeightThin)
-        //priceLabel.backgroundColor = UIColor.black
         priceLabel.text = "testyen"
-        
         
         self.addSubview(hotelImage)
         self.addSubview(spotNameLabel)
@@ -61,12 +58,10 @@ class InfoViewCell: UICollectionViewCell {
                 Top(0),
                 Left(0),
                 Right(0),
-                //Bottom(0)
                 Bottom(0).to(spotNameLabel, .top)
             ]
             
             spotNameLabel <- [
-                //Top(0),
                 Left(5),
                 Right(5),
                 Bottom(0).to(priceLabel, .top)

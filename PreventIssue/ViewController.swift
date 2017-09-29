@@ -26,9 +26,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     private let countryCode:[String] = ["HW", "IT", "FR", "TW", "ES"]
     private let countryName:[String:String] = ["HW":"ハワイ", "IT":"イタリア", "FR":"フランス", "TW":"台湾", "ES":"スペイン"]
     private let images: [UIImage] = []
-    
     private var data: [[ABRoad]] = []
-    
     
     // MARK: UIViewController
     
@@ -60,13 +58,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             abRoadApi.getTour(country: code) { [weak self] abroad in
                 
-                count += 1
-                
                 self?.data.append(abroad)
                 
-                print(abroad)
-                print("\n\n\n")
+//                print(abroad)
+//                print("\n\n\n")
                 
+                count += 1
                 if count == 5 {
                     
 //                    //いい書き方がわからない
@@ -85,16 +82,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 //                            })
 //                        }
 //                    }
-                    print(self?.data)
+//                    print(self?.data)
                     self?.findTableView.reloadData()
                 }
             }
         }
         
     }
-    
-
-    
     // MARK: UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -106,9 +100,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 //        var cell: UITableViewCell!
         if indexPath.row%2 == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(CategoryCell.self), for: indexPath) as! CategoryCell
-            print(countryName[data[(indexPath.row/2)][0].country])
+//            print(countryName[data[(indexPath.row/2)][0].country])
             cell.countryLabel.text = countryName[data[(indexPath.row/2)][0].country]
-            print(cell.countryLabel.text)
+//            print(cell.countryLabel.text)
             cell.countryLabel.textColor = UIColor.black
             cell.selectionStyle = UITableViewCellSelectionStyle.none
             
@@ -116,8 +110,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(CategoryCollectonViewCell.self), for: indexPath) as! CategoryCollectonViewCell
             cell.infoCollectionView.contentOffset = CGPoint(x: 0, y: 0)
-//            print((indexPath.row-1) / 2)
-//            print(data[(indexPath.row-1)/2])
+
             cell.collectionViewData = data[(indexPath.row-1)/2]
             cell.selectionStyle = UITableViewCellSelectionStyle.none
             cell.infoCollectionView.reloadData()

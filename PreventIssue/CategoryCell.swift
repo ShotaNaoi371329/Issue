@@ -35,7 +35,6 @@ class CategoryCell: UITableViewCell {
             countryLabel <- [
                 Top(30),
                 Left(20),
-//                Right(0).to(allLookLabel, .left),
                 Bottom(20),
             ]
             

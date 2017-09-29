@@ -29,7 +29,7 @@ class CategoryCollectonViewCell: UITableViewCell, UICollectionViewDataSource, UI
         
         infoCollectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         infoCollectionView.showsHorizontalScrollIndicator = false
-        print(infoCollectionView)
+//        print(infoCollectionView)
         
         infoCollectionView.delegate = self
         infoCollectionView.dataSource = self
@@ -66,7 +66,6 @@ extension CategoryCollectonViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCell", for: indexPath) as! InfoViewCell
         
-//        cell.backgroundColor = UIColor.white
         cell.hotelImage.image = nil
 //        cell.hotelImage.image = collectionViewData[indexPath.row].image
         cell.hotelImage.clipsToBounds = true
@@ -84,7 +83,6 @@ extension CategoryCollectonViewCell {
 
             cell.hotelImage.image = image
         }
-//        cell.hotelImage.af_setImage(withURL: NSURL(string: collectionViewData[indexPath.row].img)! as URL)
         cell.spotNameLabel.text = collectionViewData[indexPath.row].hotelName
         
         let formatter = NumberFormatter()
@@ -95,10 +93,8 @@ extension CategoryCollectonViewCell {
         let result = formatter.string(from: Int(collectionViewData[indexPath.row].price) as! NSNumber)
         
         cell.priceLabel.text = "￥" + result! + "から"
-//        cell.priceLabel.text = "￥あたり"
         
-        print(cell.frame)
-//        cell.frame.size = CGSize(width: 100, height: 100)
+//        print(cell.frame)
         return cell
     }
     
